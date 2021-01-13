@@ -23,7 +23,7 @@ public class NettyServer {
                             .option(ChannelOption.SO_BACKLOG, 128)
                             .childOption(ChannelOption.SO_KEEPALIVE, Boolean.TRUE)
                             .childHandler(new ChannelInitializer<SocketChannel>() {
-                                protected void initChannel(SocketChannel socketChannel) throws Exception {
+                                protected void initChannel(SocketChannel socketChannel) {
                                     socketChannel.pipeline().addLast(new NettyServerHandler());
                                 }
                             });
